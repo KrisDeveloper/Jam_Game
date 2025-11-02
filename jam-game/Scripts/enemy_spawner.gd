@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	$"../Label".text = str(apparition_time)
 
 func spawn():
-	apparition_time = rng.randf_range(1.5, 5.0)
+	apparition_time = rng.randf_range(0.5, 2.5)
 	await get_tree().create_timer(apparition_time).timeout
 	var enemy_instance = enemy.instantiate()
 	enemy_instance.position = aux_pos

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-const speed = 250.0
+const speed = 400.0
 
 func _ready() -> void:
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(5).timeout
 	queue_free()
 
 func _process(delta: float) -> void:
