@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://crdronrcs21jq"]
+
+[ext_resource type="PackedScene" uid="uid://crn8yoyc3brjw" path="res://Scenes/player.tscn" id="1_8yugg"]
+[ext_resource type="Script" uid="uid://gkotqmpdypoo" path="res://Scripts/enemy_spawner.gd" id="2_nxqs2"]
+
+[node name="Game_Up" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_8yugg")]
+
+[node name="Enemy_Spawner" type="Node2D" parent="."]
+script = ExtResource("2_nxqs2")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy_Spawner"]
+offset_top = 648.0
+offset_right = 40.0
+offset_bottom = 688.0
+color = Color(1, 0, 1, 1)
+
+[node name="Enemy_Spawner2" type="Node2D" parent="."]
+script = ExtResource("2_nxqs2")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy_Spawner2"]
+offset_left = 80.0
+offset_top = 648.0
+offset_right = 120.0
+offset_bottom = 688.0
+color = Color(1, 0, 1, 1)
+
+[node name="Enemy_Spawner3" type="Node2D" parent="."]
+script = ExtResource("2_nxqs2")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy_Spawner3"]
+offset_left = 160.0
+offset_top = 648.0
+offset_right = 200.0
+offset_bottom = 688.0
+color = Color(1, 0, 1, 1)
+
+[node name="Enemy_Spawner4" type="Node2D" parent="."]
+script = ExtResource("2_nxqs2")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy_Spawner4"]
+offset_left = 240.0
+offset_top = 648.0
+offset_right = 280.0
+offset_bottom = 688.0
+color = Color(1, 0, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 83.0
+offset_top = 295.0
+offset_right = 123.0
+offset_bottom = 378.0
+theme_override_font_sizes/font_size = 60
+text = "0"
