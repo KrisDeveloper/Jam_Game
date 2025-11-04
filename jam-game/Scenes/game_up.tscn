@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://crdronrcs21jq"]
+[gd_scene load_steps=5 format=3 uid="uid://crdronrcs21jq"]
 
 [ext_resource type="PackedScene" uid="uid://crn8yoyc3brjw" path="res://Scenes/player.tscn" id="1_8yugg"]
 [ext_resource type="Script" uid="uid://gkotqmpdypoo" path="res://Scripts/enemy_spawner.gd" id="2_nxqs2"]
+[ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="3_nxqs2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htr74"]
+shader = ExtResource("3_nxqs2")
+shader_parameter/resolution = Vector2(1152, 648)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.0770000036575
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.0
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
 
 [node name="Game_Up" type="Node2D"]
 
@@ -225,6 +243,11 @@ offset_top = 648.0
 offset_right = 1104.0
 offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_htr74")
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="."]
 visible = false
