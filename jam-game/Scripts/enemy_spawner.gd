@@ -11,8 +11,8 @@ func _ready() -> void:
 	aux_pos = child.position
 	spawn()
 
-func _process(delta: float) -> void:
-	$"../Label".text = str(apparition_time)
+#func _process(delta: float) -> void:
+	#$"../Label".text = str(apparition_time)
 
 func spawn():
 	apparition_time = rng.randf_range(0.5, 2.5)
