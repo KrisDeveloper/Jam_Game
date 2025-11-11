@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg1e00o8rmwov"]
+
+[ext_resource type="Script" uid="uid://bxcqf7aaq8sfx" path="res://Scripts/action_button.gd" id="1_47f8e"]
+[ext_resource type="Texture2D" uid="uid://0l4jm2je4vhq" path="res://Other/music.png" id="1_m7sn5"]
+[ext_resource type="Texture2D" uid="uid://b4mror5i4cb5l" path="res://Other/sfx.png" id="2_47f8e"]
+[ext_resource type="Texture2D" uid="uid://dmiwwdk63pg2l" path="res://Other/play-32.png" id="3_pppq8"]
+[ext_resource type="FontFile" uid="uid://dlbphwbqw2hb3" path="res://Other/dogicapixel.ttf" id="4_m23fh"]
+[ext_resource type="Texture2D" uid="uid://dmmpm0pc3esar" path="res://Other/Anonymous_Paper_3_icon.svg" id="5_b5rjk"]
+
+[node name="Action_Button" type="Node2D"]
+modulate = Color(1, 1, 0.18431373, 1)
+script = ExtResource("1_47f8e")
+
+[node name="Music" type="Sprite2D" parent="."]
+texture = ExtResource("1_m7sn5")
+
+[node name="SFX" type="Sprite2D" parent="."]
+texture = ExtResource("2_47f8e")
+
+[node name="Play32" type="Sprite2D" parent="."]
+modulate = Color(18.892157, 18.892157, 4.242929, 1)
+scale = Vector2(8, 8)
+texture = ExtResource("3_pppq8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -214.0
+offset_top = 145.0
+offset_right = 51.0
+offset_bottom = 233.0
+theme_override_fonts/font = ExtResource("4_m23fh")
+theme_override_font_sizes/font_size = 100
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Sprite2D" parent="."]
+position = Vector2(36, -5)
+scale = Vector2(2, 2)
+texture = ExtResource("5_b5rjk")
