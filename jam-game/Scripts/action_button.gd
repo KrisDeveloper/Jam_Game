@@ -1,3 +1,4 @@
+class_name Action_Button
 extends Node2D
 
 @export var icon : Sprite2D
@@ -18,3 +19,11 @@ func _process(delta: float) -> void:
 	else:
 		icon.modulate = default_color
 		label.modulate = default_color
+	
+	button.pressed.connect(action)
+
+func action():
+	if label.text == "PLAY": get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	elif label.text == "MUSIC": is_disabled = not is_disabled
+	elif label.text == "SFX": is_disabled = not is_disabled
+	elif label.text == "QUIT": get_tree().quit()

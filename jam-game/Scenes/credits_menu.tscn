@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://qg6qd1povofk"]
+
+[ext_resource type="Script" uid="uid://bb7xyou24oij" path="res://Scripts/credits_menu.gd" id="1_pf8rm"]
+[ext_resource type="FontFile" uid="uid://c5hku1mxyjyq5" path="res://Other/dogicapixelbold.ttf" id="2_pf8rm"]
+
+[node name="Credits_Menu" type="Node2D"]
+visible = false
+script = ExtResource("1_pf8rm")
+
+[node name="Panel" type="ColorRect" parent="."]
+offset_left = 128.0
+offset_top = 136.0
+offset_right = 1024.0
+offset_bottom = 512.0
+color = Color(1, 1, 0.18431373, 1)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+offset_left = 128.0
+offset_top = 144.0
+offset_right = 1219.0
+offset_bottom = 427.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pf8rm")
+theme_override_font_sizes/font_size = 20
+text = "·Created by KrisDev
+
+·Art supervision by reenyruene
+
+·Using typographies by Roberto Mocci (Dogica)
+
+·Using icons from iconsdb.com and freesvg.org
+
+·Music by KrisDev
+
+·Using shaders by c64cosmin (Realistic CRT shader)
+
+·Made with Godot Engine"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 2
+offset_left = 128.0
+offset_top = 456.0
+offset_right = 1024.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pf8rm")
+theme_override_font_sizes/font_size = 20
+text = "©2025 - KDVERSUS | CLICK TO HIDE"
+horizontal_alignment = 1
+vertical_alignment = 1

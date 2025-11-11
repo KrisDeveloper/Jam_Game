@@ -1,29 +1,28 @@
 [gd_scene load_steps=8 format=3 uid="uid://dg1e00o8rmwov"]
 
 [ext_resource type="Script" uid="uid://bxcqf7aaq8sfx" path="res://Scripts/action_button.gd" id="1_47f8e"]
-[ext_resource type="Texture2D" uid="uid://0l4jm2je4vhq" path="res://Other/music.png" id="1_m7sn5"]
-[ext_resource type="Texture2D" uid="uid://b4mror5i4cb5l" path="res://Other/sfx.png" id="2_47f8e"]
-[ext_resource type="Texture2D" uid="uid://dmiwwdk63pg2l" path="res://Other/play-32.png" id="3_pppq8"]
+[ext_resource type="Texture2D" uid="uid://d2pjd04nwr2g" path="res://Other/music.png" id="2_pppq8"]
+[ext_resource type="Texture2D" uid="uid://csmppj1f8y3qq" path="res://Other/sfx.png" id="3_m23fh"]
+[ext_resource type="Texture2D" uid="uid://dpculq7pid7r2" path="res://Other/play.png" id="4_b5rjk"]
 [ext_resource type="FontFile" uid="uid://dlbphwbqw2hb3" path="res://Other/dogicapixel.ttf" id="4_m23fh"]
 [ext_resource type="Texture2D" uid="uid://dmmpm0pc3esar" path="res://Other/Anonymous_Paper_3_icon.svg" id="5_b5rjk"]
-[ext_resource type="Texture2D" uid="uid://c5n1qb1wywykj" path="res://Other/multiply-3-32.png" id="7_pppq8"]
+[ext_resource type="Texture2D" uid="uid://robki73wm4qc" path="res://Other/quit.png" id="7_8ng0b"]
 
 [node name="Action_Button" type="Node2D"]
 script = ExtResource("1_47f8e")
 
 [node name="Music" type="Sprite2D" parent="."]
-texture = ExtResource("1_m7sn5")
+texture = ExtResource("2_pppq8")
 
 [node name="SFX" type="Sprite2D" parent="."]
-texture = ExtResource("2_47f8e")
+texture = ExtResource("3_m23fh")
 
 [node name="Play" type="Sprite2D" parent="."]
 modulate = Color(18.892157, 18.892157, 4.242929, 1)
 scale = Vector2(8, 8)
-texture = ExtResource("3_pppq8")
+texture = ExtResource("4_b5rjk")
 
 [node name="Label" type="Label" parent="."]
-modulate = Color(1, 1, 0.18431373, 1)
 texture_filter = 2
 offset_left = -214.0
 offset_top = 145.0
@@ -36,21 +35,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Credits" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0.18431373, 1)
-position = Vector2(36, -5)
+position = Vector2(32, 8)
 scale = Vector2(2, 2)
 texture = ExtResource("5_b5rjk")
 
 [node name="Quit" type="Sprite2D" parent="."]
-modulate = Color(3.7736247, 3.7736247, 0.81347626, 1)
 position = Vector2(5, 16)
 scale = Vector2(8, 8)
-texture = ExtResource("7_pppq8")
+texture = ExtResource("7_8ng0b")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_left = -113.0
-offset_top = -110.0
+offset_top = -107.0
 offset_right = 124.0
-offset_bottom = 143.0
+offset_bottom = 146.0
 mouse_default_cursor_shape = 2

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn8cmuvvbdsns"]
+[gd_scene load_steps=8 format=3 uid="uid://dn8cmuvvbdsns"]
 
 [ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://8x7ce5kaa887" path="res://Scripts/menu.gd" id="1_158mb"]
 [ext_resource type="Texture2D" uid="uid://x5gqlimyqc06" path="res://Sprites/IMG_20251102_184415.png" id="2_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://ckbe2txsjy0sg" path="res://Other/logo10_6_23727.png" id="3_cayip"]
 [ext_resource type="PackedScene" uid="uid://dg1e00o8rmwov" path="res://Scenes/action_button.tscn" id="4_wwsa2"]
+[ext_resource type="PackedScene" uid="uid://qg6qd1povofk" path="res://Scenes/credits_menu.tscn" id="5_jsrd8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xhh6f"]
 shader = ExtResource("1_1rerr")
@@ -63,102 +64,106 @@ visible = false
 [node name="Quit" parent="Main_Menu_Container/Play_Button" index="5"]
 visible = false
 
-[node name="Action_Button2" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="Music_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(428, 424)
 scale = Vector2(0.3, 0.3)
 icon = NodePath("Music")
 
-[node name="SFX" parent="Main_Menu_Container/Action_Button2" index="1"]
+[node name="SFX" parent="Main_Menu_Container/Music_Button" index="1"]
 visible = false
 
-[node name="Play" parent="Main_Menu_Container/Action_Button2" index="2"]
+[node name="Play" parent="Main_Menu_Container/Music_Button" index="2"]
 visible = false
 
-[node name="Label" parent="Main_Menu_Container/Action_Button2" index="3"]
+[node name="Label" parent="Main_Menu_Container/Music_Button" index="3"]
 offset_left = -213.3333
 offset_top = 156.66666
 offset_right = 211.6667
 offset_bottom = 244.66666
 text = "MUSIC"
 
-[node name="Credits" parent="Main_Menu_Container/Action_Button2" index="4"]
+[node name="Credits" parent="Main_Menu_Container/Music_Button" index="4"]
 visible = false
 
-[node name="Quit" parent="Main_Menu_Container/Action_Button2" index="5"]
+[node name="Quit" parent="Main_Menu_Container/Music_Button" index="5"]
 visible = false
 
-[node name="Action_Button3" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="SFX_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(584, 424)
 scale = Vector2(0.3, 0.3)
 icon = NodePath("SFX")
 
-[node name="Music" parent="Main_Menu_Container/Action_Button3" index="0"]
+[node name="Music" parent="Main_Menu_Container/SFX_Button" index="0"]
 visible = false
 
-[node name="Play" parent="Main_Menu_Container/Action_Button3" index="2"]
+[node name="Play" parent="Main_Menu_Container/SFX_Button" index="2"]
 visible = false
 
-[node name="Label" parent="Main_Menu_Container/Action_Button3" index="3"]
+[node name="Label" parent="Main_Menu_Container/SFX_Button" index="3"]
 offset_left = -209.99995
 offset_top = 156.66667
 offset_right = 55.000046
 offset_bottom = 244.66667
 text = "SFX"
 
-[node name="Credits" parent="Main_Menu_Container/Action_Button3" index="4"]
+[node name="Credits" parent="Main_Menu_Container/SFX_Button" index="4"]
 visible = false
 
-[node name="Quit" parent="Main_Menu_Container/Action_Button3" index="5"]
+[node name="Quit" parent="Main_Menu_Container/SFX_Button" index="5"]
 visible = false
 
-[node name="Action_Button4" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="Credits_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(740, 424)
 scale = Vector2(0.3, 0.3)
 icon = NodePath("Credits")
 
-[node name="Music" parent="Main_Menu_Container/Action_Button4" index="0"]
+[node name="Music" parent="Main_Menu_Container/Credits_Button" index="0"]
 visible = false
 
-[node name="SFX" parent="Main_Menu_Container/Action_Button4" index="1"]
+[node name="SFX" parent="Main_Menu_Container/Credits_Button" index="1"]
 visible = false
 
-[node name="Play" parent="Main_Menu_Container/Action_Button4" index="2"]
+[node name="Play" parent="Main_Menu_Container/Credits_Button" index="2"]
 visible = false
 
-[node name="Label" parent="Main_Menu_Container/Action_Button4" index="3"]
+[node name="Label" parent="Main_Menu_Container/Credits_Button" index="3"]
 offset_left = -296.66663
 offset_top = 156.66666
 offset_right = 303.33337
 offset_bottom = 244.66666
 text = "CREDITS"
 
-[node name="Quit" parent="Main_Menu_Container/Action_Button4" index="5"]
+[node name="Quit" parent="Main_Menu_Container/Credits_Button" index="5"]
 visible = false
 
-[node name="Action_Button5" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="Quit_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(896, 424)
 scale = Vector2(0.3, 0.3)
 icon = NodePath("Quit")
 
-[node name="Music" parent="Main_Menu_Container/Action_Button5" index="0"]
+[node name="Music" parent="Main_Menu_Container/Quit_Button" index="0"]
 visible = false
 
-[node name="SFX" parent="Main_Menu_Container/Action_Button5" index="1"]
+[node name="SFX" parent="Main_Menu_Container/Quit_Button" index="1"]
 visible = false
 
-[node name="Play" parent="Main_Menu_Container/Action_Button5" index="2"]
+[node name="Play" parent="Main_Menu_Container/Quit_Button" index="2"]
 visible = false
 
-[node name="Label" parent="Main_Menu_Container/Action_Button5" index="3"]
+[node name="Label" parent="Main_Menu_Container/Quit_Button" index="3"]
 offset_left = -293.33328
 offset_top = 156.66663
 offset_right = 306.66672
 offset_bottom = 244.66663
 text = "QUIT"
 
-[node name="Credits" parent="Main_Menu_Container/Action_Button5" index="4"]
+[node name="Credits" parent="Main_Menu_Container/Quit_Button" index="4"]
 visible = false
 position = Vector2(0, 0)
+
+[node name="Credits_Menu" parent="Main_Menu_Container" node_paths=PackedStringArray("credits") instance=ExtResource("5_jsrd8")]
+position = Vector2(4, 40)
+credits = NodePath("../Credits_Button")
 
 [node name="Splash_Controller" type="Node2D" parent="."]
 z_index = -1
@@ -171,7 +176,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_cayip")
 
 [editable path="Main_Menu_Container/Play_Button"]
-[editable path="Main_Menu_Container/Action_Button2"]
-[editable path="Main_Menu_Container/Action_Button3"]
-[editable path="Main_Menu_Container/Action_Button4"]
-[editable path="Main_Menu_Container/Action_Button5"]
+[editable path="Main_Menu_Container/Music_Button"]
+[editable path="Main_Menu_Container/SFX_Button"]
+[editable path="Main_Menu_Container/Credits_Button"]
+[editable path="Main_Menu_Container/Quit_Button"]
