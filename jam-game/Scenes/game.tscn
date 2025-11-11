@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://crdronrcs21jq"]
 
-[ext_resource type="PackedScene" uid="uid://crn8yoyc3brjw" path="res://Scenes/player.tscn" id="1_8yugg"]
-[ext_resource type="Script" uid="uid://gkotqmpdypoo" path="res://Scripts/enemy_spawner.gd" id="2_nxqs2"]
-[ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="3_nxqs2"]
+[ext_resource type="PackedScene" uid="uid://crn8yoyc3brjw" path="res://Scenes/player.tscn" id="1_wrm1d"]
+[ext_resource type="Script" uid="uid://gkotqmpdypoo" path="res://Scripts/enemy_spawner.gd" id="2_3dryh"]
+[ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="3_wowpa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_htr74"]
-shader = ExtResource("3_nxqs2")
-shader_parameter/resolution = Vector2(1152, 648)
+shader = ExtResource("3_wowpa")
+shader_parameter/resolution = Vector2(256, 240)
 shader_parameter/scan_line_amount = 1.0
 shader_parameter/warp_amount = 0.1
-shader_parameter/noise_amount = 0.0770000036575
+shader_parameter/noise_amount = 0.0490000023275
 shader_parameter/interference_amount = 0.2
 shader_parameter/grille_amount = 0.0
 shader_parameter/grille_size = 1.0
@@ -21,12 +21,12 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[node name="Game_Up" type="Node2D"]
+[node name="Game" type="Node2D"]
 
-[node name="player" parent="." instance=ExtResource("1_8yugg")]
+[node name="player" parent="." instance=ExtResource("1_wrm1d")]
 
 [node name="Enemy_Spawner" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner"]
 offset_top = 648.0
@@ -35,7 +35,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner2" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner2"]
 offset_left = 56.0
@@ -45,7 +45,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner3" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner3"]
 offset_left = 112.0
@@ -55,7 +55,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner4" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner4"]
 offset_left = 168.0
@@ -65,7 +65,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner5" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner5"]
 offset_left = 168.0
@@ -75,7 +75,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner6" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner6"]
 offset_left = 504.0
@@ -85,7 +85,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner7" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner7"]
 offset_left = 448.0
@@ -95,7 +95,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner8" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner8"]
 offset_left = 392.0
@@ -105,7 +105,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner9" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner9"]
 offset_left = 336.0
@@ -115,7 +115,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner10" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner10"]
 offset_left = 280.0
@@ -125,7 +125,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner11" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner11"]
 offset_left = 224.0
@@ -135,7 +135,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner12" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner12"]
 offset_left = 784.0
@@ -145,7 +145,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner13" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner13"]
 offset_left = 728.0
@@ -155,7 +155,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner14" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner14"]
 offset_left = 672.0
@@ -165,7 +165,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner15" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner15"]
 offset_left = 616.0
@@ -175,7 +175,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner16" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner16"]
 offset_left = 560.0
@@ -185,7 +185,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner17" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner17"]
 offset_left = 1008.0
@@ -195,7 +195,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner18" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner18"]
 offset_left = 952.0
@@ -205,7 +205,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner19" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner19"]
 offset_left = 896.0
@@ -215,7 +215,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner20" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner20"]
 offset_left = 840.0
@@ -225,7 +225,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner21" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner21"]
 offset_left = 1120.0
@@ -235,7 +235,7 @@ offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
 [node name="Enemy_Spawner22" type="Node2D" parent="."]
-script = ExtResource("2_nxqs2")
+script = ExtResource("2_3dryh")
 
 [node name="ColorRect" type="ColorRect" parent="Enemy_Spawner22"]
 offset_left = 1064.0
@@ -244,7 +244,7 @@ offset_right = 1104.0
 offset_bottom = 688.0
 color = Color(1, 0, 1, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CRT_Filter" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_htr74")
 offset_right = 1152.0
 offset_bottom = 648.0

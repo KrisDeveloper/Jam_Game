@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn8cmuvvbdsns"]
+
+[ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://x5gqlimyqc06" path="res://Sprites/IMG_20251102_184415.png" id="2_xhh6f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhh6f"]
+shader = ExtResource("1_1rerr")
+shader_parameter/resolution = Vector2(256, 240)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.0490000023275
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.0
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[node name="Menu" type="Node2D"]
+
+[node name="Img20251102184415" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(585, 245)
+texture = ExtResource("2_xhh6f")
+
+[node name="CRT_Filter" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xhh6f")
+offset_right = 1152.0
+offset_bottom = 648.0
