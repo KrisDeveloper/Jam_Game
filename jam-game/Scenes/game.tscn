@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://crdronrcs21jq"]
+[gd_scene load_steps=8 format=3 uid="uid://crdronrcs21jq"]
 
+[ext_resource type="Script" uid="uid://bf3xvkmeex15q" path="res://Scenes/game.gd" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://crn8yoyc3brjw" path="res://Scenes/player.tscn" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://gkotqmpdypoo" path="res://Scripts/enemy_spawner.gd" id="2_3dryh"]
 [ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="3_wowpa"]
+[ext_resource type="FontFile" uid="uid://c5hku1mxyjyq5" path="res://Other/dogicapixelbold.ttf" id="4_3dryh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_htr74"]
 shader = ExtResource("3_wowpa")
@@ -21,7 +23,11 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wowpa"]
+size = Vector2(1412, 20)
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_wowpa")
 
 [node name="player" parent="." instance=ExtResource("1_wrm1d")]
 
@@ -249,11 +255,24 @@ material = SubResource("ShaderMaterial_htr74")
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 83.0
-offset_top = 295.0
-offset_right = 123.0
-offset_bottom = 378.0
-theme_override_font_sizes/font_size = 60
-text = "0"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 23.0
+offset_right = 371.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("4_3dryh")
+theme_override_font_sizes/font_size = 40
+text = "TEST LABEL"
+
+[node name="Meteor_Destroy_Trigger" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meteor_Destroy_Trigger"]
+position = Vector2(706, -33)
+shape = SubResource("RectangleShape2D_wowpa")
+
+[connection signal="body_entered" from="Meteor_Destroy_Trigger" to="." method="_on_meteor_destroy_trigger_body_entered"]

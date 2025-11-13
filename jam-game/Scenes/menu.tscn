@@ -168,7 +168,8 @@ visible = false
 position = Vector2(0, 0)
 
 [node name="Credits_Menu" parent="Main_Menu_Container" node_paths=PackedStringArray("credits") instance=ExtResource("5_jsrd8")]
-position = Vector2(4, 40)
+visible = false
+position = Vector2(0, 1.5)
 credits = NodePath("../Credits_Button")
 
 [node name="Splash_Controller" type="Node2D" parent="."]

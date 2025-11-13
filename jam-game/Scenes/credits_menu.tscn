@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://c5hku1mxyjyq5" path="res://Other/dogicapixelbold.ttf" id="2_pf8rm"]
 
 [node name="Credits_Menu" type="Node2D"]
-visible = false
 script = ExtResource("1_pf8rm")
 
 [node name="Panel" type="ColorRect" parent="."]

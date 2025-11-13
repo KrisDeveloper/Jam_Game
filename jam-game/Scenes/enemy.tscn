@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
 radius = 18.248287
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["meteor"]]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_hghv2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -15,9 +17,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 0, 0, 1)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Damage_Trigger" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_Trigger"]
+position = Vector2(19, 19)
+shape = SubResource("CircleShape2D_afpow")
+
+[node name="Meteor_Collider" type="CollisionShape2D" parent="."]
 position = Vector2(19, 19)
 shape = SubResource("CircleShape2D_afpow")
 
@@ -33,4 +39,4 @@ position = Vector2(20, 20)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_1f0kj")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Damage_Trigger" to="." method="_on_area_2d_body_entered"]
