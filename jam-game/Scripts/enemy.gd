@@ -3,11 +3,15 @@ extends CharacterBody2D
 const speed = 400.0
 
 func _process(delta: float) -> void:
+	#THE METEOR CONSTANTLY GOES UP.
 	velocity.y -= speed * delta
 	move_and_slide()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	#HERE, THE METEOR KILLS THE PLAYER, SLOW DOWN THE
+	#SCENE FOR A BIT, AND THEN, THE TIME SCALE GOES BACK
+	#TO ITS NORMAL VALUE.
 	if body.is_in_group("player"):
 		body.queue_free()
 		Engine.time_scale = 0.3

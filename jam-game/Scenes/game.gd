@@ -9,5 +9,6 @@ func _process(delta: float) -> void:
 
 func _on_meteor_destroy_trigger_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("meteor"):
+		#IF THE PLAYER ISNT DEAD, ADDS ONE TO THE SCORE.
 		if not player == null: save_manager.current_score += 1
 		body.queue_free()
