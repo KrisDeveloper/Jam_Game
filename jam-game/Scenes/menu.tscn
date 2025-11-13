@@ -69,6 +69,9 @@ position = Vector2(428, 424)
 scale = Vector2(0.3, 0.3)
 icon = NodePath("Music")
 
+[node name="Music" parent="Main_Menu_Container/Music_Button" index="0"]
+position = Vector2(-7.497, 0)
+
 [node name="SFX" parent="Main_Menu_Container/Music_Button" index="1"]
 visible = false
 
@@ -127,11 +130,14 @@ visible = false
 visible = false
 
 [node name="Label" parent="Main_Menu_Container/Credits_Button" index="3"]
-offset_left = -296.66663
-offset_top = 156.66666
-offset_right = 303.33337
-offset_bottom = 244.66666
+offset_left = -365.087
+offset_top = 156.667
+offset_right = 322.913
+offset_bottom = 244.667
 text = "CREDITS"
+
+[node name="Credits" parent="Main_Menu_Container/Credits_Button" index="4"]
+position = Vector2(29.495, 8)
 
 [node name="Quit" parent="Main_Menu_Container/Credits_Button" index="5"]
 visible = false

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d2pjd04nwr2g" path="res://Other/music.png" id="2_pppq8"]
 [ext_resource type="Texture2D" uid="uid://csmppj1f8y3qq" path="res://Other/sfx.png" id="3_m23fh"]
 [ext_resource type="Texture2D" uid="uid://dpculq7pid7r2" path="res://Other/play.png" id="4_b5rjk"]
-[ext_resource type="FontFile" uid="uid://dlbphwbqw2hb3" path="res://Other/dogicapixel.ttf" id="4_m23fh"]
 [ext_resource type="Texture2D" uid="uid://dmmpm0pc3esar" path="res://Other/Anonymous_Paper_3_icon.svg" id="5_b5rjk"]
+[ext_resource type="FontFile" uid="uid://c5hku1mxyjyq5" path="res://Other/dogicapixelbold.ttf" id="5_pppq8"]
 [ext_resource type="Texture2D" uid="uid://robki73wm4qc" path="res://Other/quit.png" id="7_8ng0b"]
 
 [node name="Action_Button" type="Node2D"]
@@ -28,7 +28,7 @@ offset_left = -214.0
 offset_top = 145.0
 offset_right = 51.0
 offset_bottom = 233.0
-theme_override_fonts/font = ExtResource("4_m23fh")
+theme_override_fonts/font = ExtResource("5_pppq8")
 theme_override_font_sizes/font_size = 100
 text = "BUTTON"
 horizontal_alignment = 1
