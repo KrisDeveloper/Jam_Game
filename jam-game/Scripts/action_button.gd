@@ -14,6 +14,9 @@ extends Node2D
 #THE BUTTON ITSELF.
 @onready var button = $Button
 
+@onready var select_sound_player = $Select
+@onready var confirm_sound_player = $Confirm
+
 #THE COLOR OF THE BUTTON IN ITS DEFAULT STATE.
 var default_color = Color8(255, 255, 47)
 
@@ -33,12 +36,19 @@ func _process(delta: float) -> void:
 		label.modulate = default_color
 	
 	button.pressed.connect(action)
+	button.mouse_entered.connect(play_select_sound)
 
 
 #THIS FUNCTION GETS THE ACTION THAT THE BUTTON SHOULD DO
 #DEPENDING ON ITS TEXT.
 func action():
-	if label.text == "PLAY": get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	confirm_sound_player.playing = true
+	
+	if label.text == "PLAY":
+		await confirm_sound_player.finished
+		get_tree().change_scene_to_file("res://Scenes/game.tscn")
 	elif label.text == "MUSIC": is_disabled = not is_disabled
 	elif label.text == "SFX": is_disabled = not is_disabled
 	elif label.text == "QUIT": get_tree().quit()
+
+func play_select_sound(): select_sound_player.playing = true

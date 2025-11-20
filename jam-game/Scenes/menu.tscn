@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn8cmuvvbdsns"]
+[gd_scene load_steps=10 format=3 uid="uid://dn8cmuvvbdsns"]
 
 [ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://8x7ce5kaa887" path="res://Scripts/menu.gd" id="1_158mb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dg1e00o8rmwov" path="res://Scenes/action_button.tscn" id="4_wwsa2"]
 [ext_resource type="PackedScene" uid="uid://qg6qd1povofk" path="res://Scenes/credits_menu.tscn" id="5_jsrd8"]
 [ext_resource type="FontFile" uid="uid://c5hku1mxyjyq5" path="res://Other/dogicapixelbold.ttf" id="6_wbdvm"]
+[ext_resource type="AudioStream" uid="uid://cg6gwpttqchr" path="res://Audio/Music/menu.wav" id="8_q3rjx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xhh6f"]
 shader = ExtResource("1_1rerr")
@@ -196,6 +197,10 @@ texture_filter = 2
 position = Vector2(566, 323)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_cayip")
+
+[node name="Music_Player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_q3rjx")
+volume_db = 8.0
 
 [editable path="Main_Menu_Container/Play_Button"]
 [editable path="Main_Menu_Container/Music_Button"]

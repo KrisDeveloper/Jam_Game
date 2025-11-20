@@ -4,6 +4,7 @@ extends Node2D
 @onready var flash_screen = $Flash_Screen
 @onready var main_menu_container = $Main_Menu_Container
 @onready var high_score_label = $Main_Menu_Container/High_Score
+@onready var music_player = $Music_Player
 
 func _ready() -> void:
 	await get_tree().create_timer(0.3).timeout
@@ -26,4 +27,5 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	#AND THEN, THE MAIN MENU APPEARS.
 	main_menu_container.position.y = 0
+	music_player.playing = true
 	high_score_label.text = "HIGH SCORE: " + str(save_manager.current_high_score)
