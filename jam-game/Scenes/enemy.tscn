@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b033mw1uwq3vx"]
+[gd_scene load_steps=4 format=3 uid="uid://b033mw1uwq3vx"]
 
 [ext_resource type="Script" uid="uid://c3xj4hnrnlxqp" path="res://Scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://dcy1lfow3mowo" path="res://Sprites/meteor.png" id="2_1f0kj"]
-[ext_resource type="AudioStream" uid="uid://5brr8pbg0icx" path="res://Audio/SFX/explosion.wav" id="3_afpow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
 radius = 18.248287
@@ -39,9 +38,5 @@ color = Color(1, 1, 0, 1)
 position = Vector2(20, 20)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_1f0kj")
-
-[node name="Hit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_afpow")
-volume_db = 24.0
 
 [connection signal="body_entered" from="Damage_Trigger" to="." method="_on_area_2d_body_entered"]

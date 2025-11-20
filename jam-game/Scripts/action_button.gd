@@ -1,6 +1,8 @@
 class_name Action_Button
 extends Node2D
 
+@export var save_manager : Node
+
 #THE IMAGE THAT THE BUTTON SHOULD DISPLAY (THIS VARIABLE
 #JUST GETS THE ICON TO CHANGE ITS COLOR DEPENDING ON THE
 #BUTTON STATE, BUT YOU HAVE TO SET THE VISIBILITY FOR 
@@ -25,6 +27,11 @@ var default_color = Color8(255, 255, 47)
 var is_disabled : bool
 
 func _process(delta: float) -> void:
+	if label.text == "MUSIC":
+		is_disabled = not save_manager.music_enabled
+	elif label.text == "SFX":
+		is_disabled = not save_manager.sfx_enabled
+		
 	if button.is_hovered():
 		icon.modulate = Color.WHITE
 		label.modulate = Color.WHITE
@@ -42,13 +49,21 @@ func _process(delta: float) -> void:
 #THIS FUNCTION GETS THE ACTION THAT THE BUTTON SHOULD DO
 #DEPENDING ON ITS TEXT.
 func action():
-	confirm_sound_player.playing = true
+	if save_manager.sfx_enabled: confirm_sound_player.playing = true
 	
 	if label.text == "PLAY":
-		await confirm_sound_player.finished
+		if save_manager.sfx_enabled: await confirm_sound_player.finished
+		save_manager.save_data()
 		get_tree().change_scene_to_file("res://Scenes/game.tscn")
-	elif label.text == "MUSIC": is_disabled = not is_disabled
-	elif label.text == "SFX": is_disabled = not is_disabled
-	elif label.text == "QUIT": get_tree().quit()
+	elif label.text == "MUSIC":
+		save_manager.music_enabled = not save_manager.music_enabled 
+		is_disabled = not save_manager.music_enabled
+	elif label.text == "SFX":
+		save_manager.sfx_enabled = not save_manager.sfx_enabled 
+		is_disabled = not save_manager.sfx_enabled
+	elif label.text == "QUIT":
+		save_manager.save_data()
+		get_tree().quit()
 
-func play_select_sound(): select_sound_player.playing = true
+func play_select_sound():
+	if save_manager.sfx_enabled: select_sound_player.playing = true

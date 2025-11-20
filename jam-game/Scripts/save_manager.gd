@@ -8,6 +8,12 @@ var music_enabled : bool
 var sfx_enabled : bool
 var path = "user://save.tres"
 
+func _ready() -> void:
+	if not ResourceLoader.exists(path):
+		music_enabled = true
+		sfx_enabled = true
+
+
 func save_data():
 	save_file.high_score = current_high_score
 	save_file.music_enabled = music_enabled

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crdronrcs21jq"]
+[gd_scene load_steps=13 format=3 uid="uid://crdronrcs21jq"]
 
 [ext_resource type="Script" uid="uid://bf3xvkmeex15q" path="res://Scenes/game.gd" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://crn8yoyc3brjw" path="res://Scenes/player.tscn" id="1_wrm1d"]
@@ -7,6 +7,9 @@
 [ext_resource type="FontFile" uid="uid://c5hku1mxyjyq5" path="res://Other/dogicapixelbold.ttf" id="4_3dryh"]
 [ext_resource type="Script" uid="uid://cnisb843shd7s" path="res://Scripts/go_back_to_menu.gd" id="6_i6g32"]
 [ext_resource type="AudioStream" uid="uid://catufyt4inex3" path="res://Audio/Music/game.wav" id="7_1l0tm"]
+[ext_resource type="Script" uid="uid://bgeukr531sblw" path="res://Scripts/save_manager.gd" id="8_h4fw4"]
+[ext_resource type="Resource" uid="uid://b33d2obojmg5o" path="res://Resources/save.tres" id="9_ldgsr"]
+[ext_resource type="AudioStream" uid="uid://5brr8pbg0icx" path="res://Audio/SFX/explosion.wav" id="10_ldgsr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_htr74"]
 shader = ExtResource("3_wowpa")
@@ -289,9 +292,17 @@ collision_mask = 2
 position = Vector2(706, -33)
 shape = SubResource("RectangleShape2D_wowpa")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1l0tm")
 volume_db = 8.0
 autoplay = true
+
+[node name="Save_Manager" type="Node" parent="."]
+script = ExtResource("8_h4fw4")
+save_file = ExtResource("9_ldgsr")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ldgsr")
+volume_db = 24.0
 
 [connection signal="body_entered" from="Meteor_Destroy_Trigger" to="." method="_on_meteor_destroy_trigger_body_entered"]

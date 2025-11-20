@@ -5,8 +5,10 @@ extends Node2D
 @onready var main_menu_container = $Main_Menu_Container
 @onready var high_score_label = $Main_Menu_Container/High_Score
 @onready var music_player = $Music_Player
+@onready var save_manager = $Save_Manager
 
 func _ready() -> void:
+	save_manager.load_data()
 	await get_tree().create_timer(0.3).timeout
 	flash_screen.visible = false
 	#THE CURSOR BECOMES VISIBLE AGAIN (JUST IN CASE
@@ -28,4 +30,10 @@ func _ready() -> void:
 	#AND THEN, THE MAIN MENU APPEARS.
 	main_menu_container.position.y = 0
 	music_player.playing = true
-	high_score_label.text = "HIGH SCORE: " + str(save_manager.current_high_score)
+	high_score_label.text = "HIGH SCORE: " + str(save_manager.save_file.high_score)
+	
+func _process(delta: float) -> void:
+	if save_manager.music_enabled:
+		music_player.volume_db = 8
+	else:
+		music_player.volume_db = -80

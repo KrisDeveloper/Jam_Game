@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn8cmuvvbdsns"]
+[gd_scene load_steps=12 format=3 uid="uid://dn8cmuvvbdsns"]
 
 [ext_resource type="Shader" uid="uid://cod1xldt0xvdo" path="res://Shaders/crt.gdshader" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://8x7ce5kaa887" path="res://Scripts/menu.gd" id="1_158mb"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://qg6qd1povofk" path="res://Scenes/credits_menu.tscn" id="5_jsrd8"]
 [ext_resource type="FontFile" uid="uid://c5hku1mxyjyq5" path="res://Other/dogicapixelbold.ttf" id="6_wbdvm"]
 [ext_resource type="AudioStream" uid="uid://cg6gwpttqchr" path="res://Audio/Music/menu.wav" id="8_q3rjx"]
+[ext_resource type="Script" uid="uid://bgeukr531sblw" path="res://Scripts/save_manager.gd" id="9_6swd7"]
+[ext_resource type="Resource" uid="uid://b33d2obojmg5o" path="res://Resources/save.tres" id="10_7qvly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xhh6f"]
 shader = ExtResource("1_1rerr")
@@ -46,9 +48,10 @@ texture_filter = 1
 position = Vector2(585, 245)
 texture = ExtResource("2_xhh6f")
 
-[node name="Play_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="Play_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("save_manager", "icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(272, 424)
 scale = Vector2(0.3, 0.3)
+save_manager = NodePath("../../Save_Manager")
 icon = NodePath("Play")
 
 [node name="Music" parent="Main_Menu_Container/Play_Button" index="0"]
@@ -70,9 +73,10 @@ visible = false
 [node name="Quit" parent="Main_Menu_Container/Play_Button" index="5"]
 visible = false
 
-[node name="Music_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="Music_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("save_manager", "icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(428, 424)
 scale = Vector2(0.3, 0.3)
+save_manager = NodePath("../../Save_Manager")
 icon = NodePath("Music")
 
 [node name="Music" parent="Main_Menu_Container/Music_Button" index="0"]
@@ -97,9 +101,10 @@ visible = false
 [node name="Quit" parent="Main_Menu_Container/Music_Button" index="5"]
 visible = false
 
-[node name="SFX_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="SFX_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("save_manager", "icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(584, 424)
 scale = Vector2(0.3, 0.3)
+save_manager = NodePath("../../Save_Manager")
 icon = NodePath("SFX")
 
 [node name="Music" parent="Main_Menu_Container/SFX_Button" index="0"]
@@ -121,9 +126,10 @@ visible = false
 [node name="Quit" parent="Main_Menu_Container/SFX_Button" index="5"]
 visible = false
 
-[node name="Credits_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="Credits_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("save_manager", "icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(740, 424)
 scale = Vector2(0.3, 0.3)
+save_manager = NodePath("../../Save_Manager")
 icon = NodePath("Credits")
 
 [node name="Music" parent="Main_Menu_Container/Credits_Button" index="0"]
@@ -148,9 +154,10 @@ position = Vector2(29.495, 8)
 [node name="Quit" parent="Main_Menu_Container/Credits_Button" index="5"]
 visible = false
 
-[node name="Quit_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("icon") instance=ExtResource("4_wwsa2")]
+[node name="Quit_Button" parent="Main_Menu_Container" node_paths=PackedStringArray("save_manager", "icon") instance=ExtResource("4_wwsa2")]
 position = Vector2(896, 424)
 scale = Vector2(0.3, 0.3)
+save_manager = NodePath("../../Save_Manager")
 icon = NodePath("Quit")
 
 [node name="Music" parent="Main_Menu_Container/Quit_Button" index="0"]
@@ -201,6 +208,10 @@ texture = ExtResource("3_cayip")
 [node name="Music_Player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_q3rjx")
 volume_db = 8.0
+
+[node name="Save_Manager" type="Node" parent="."]
+script = ExtResource("9_6swd7")
+save_file = ExtResource("10_7qvly")
 
 [editable path="Main_Menu_Container/Play_Button"]
 [editable path="Main_Menu_Container/Music_Button"]

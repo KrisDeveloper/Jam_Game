@@ -15,10 +15,7 @@ run/main_scene="uid://dn8cmuvvbdsns"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
-
-[autoload]
-
-save_manager="*res://Scripts/save_manager.gd"
+config/windows_native_icon="res://mmh_icon.ico"
 
 [display]
 
